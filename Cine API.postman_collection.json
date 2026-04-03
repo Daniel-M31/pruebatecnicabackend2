@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "982d1559-80cd-4e0c-99aa-4d91e79a5032",
+    "name": "Cine API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53660574",
+    "_collection_link": "https://go.postman.co/collection/53660574-982d1559-80cd-4e0c-99aa-4d91e79a5032?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear una nueva película",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Matrix\",\r\n  \"duracion\": 130,\r\n  \"estado\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5246/api/peliculas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5246",
+          "path": [
+            "api",
+            "peliculas"
+          ]
+        },
+        "description": "Agrega una nueva película a la base de datos"
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar (desactivar) una película",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5246/api/peliculas/12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5246",
+          "path": [
+            "api",
+            "peliculas",
+            "12"
+          ]
+        },
+        "description": "Cambia el estado de la película a `false` (eliminación lógica)"
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar estado de sala",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Devuelve el mensaje según la cantidad de películas asignadas a la sala:\n\n<3 = Sala disponible\n\n3–5 = Sala con \\[n\\] películas asignadas\n\n\\>5 = Sala no disponible"
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar una película",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id_pelicula\": 13,\r\n  \"nombre\": \"Matrix actualizada\",\r\n  \"duracion\": 140,\r\n  \"estado\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5246/api/peliculas/13",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5246",
+          "path": [
+            "api",
+            "peliculas",
+            "13"
+          ]
+        },
+        "description": "Actualiza los datos de una película existente"
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar películas por fecha de estreno",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5246/api/peliculas/estreno?fecha=2026-04-05",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5246",
+          "path": [
+            "api",
+            "peliculas",
+            "estreno"
+          ],
+          "query": [
+            {
+              "key": "fecha",
+              "value": "2026-04-05"
+            }
+          ]
+        },
+        "description": "Devuelve películas que se publican en la fecha indicada"
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar película por nombre",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Devuelve todas las películas registradas en la base de datos"
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todas las películas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Colección de endpoints para el proyecto de cine (películas y salas)"
+      },
+      "response": []
+    }
+  ]
+}
