@@ -1,0 +1,6 @@
+@Cine_PruebaDanielMartinez_HostAddress = http://localhost:5246
+
+GET {{Cine_PruebaDanielMartinez_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
