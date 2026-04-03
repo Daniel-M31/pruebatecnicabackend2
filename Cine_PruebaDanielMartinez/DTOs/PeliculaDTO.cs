@@ -2,7 +2,7 @@
 {
     public class PeliculaDTO
     {
-        public int id_pelicula { get; set; }  // 🔹 Cambio de Id → id_pelicula
+        public int id_pelicula { get; set; } 
         public string Nombre { get; set; } = null!;
         public int Duracion { get; set; }
         public bool Estado { get; set; }
@@ -10,7 +10,7 @@
 
     public class PeliculaConFechasDTO
     {
-        public int id_pelicula { get; set; }  // 🔹 Cambio aquí también
+        public int id_pelicula { get; set; } 
         public string Nombre { get; set; } = null!;
         public int Duracion { get; set; }
         public List<FechaSalaDTO> Fechas { get; set; } = new List<FechaSalaDTO>();
